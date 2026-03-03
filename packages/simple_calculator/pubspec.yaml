@@ -1,6 +1,6 @@
 name: simple_calculator
 description: "A new Flutter package project."
-version: 0.0.2-dev.0
+version: 0.0.2-dev.1
 
 environment:
   sdk: ^3.5.2
