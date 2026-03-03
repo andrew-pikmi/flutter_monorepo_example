@@ -42,4 +42,19 @@ void main() {
     expect(logic.expression, isEmpty);
     expect(logic.result, '0');
   });
+
+  test('operator does not replace pending negative sign token', () {
+    final CalculatorLogic logic = CalculatorLogic();
+
+    for (final String key in <String>[
+      '5',
+      '+',
+      CalculatorConstants.signToggleKey,
+      '*',
+    ]) {
+      logic.onKeyPressed(key);
+    }
+
+    expect(logic.expression, '5 + -');
+  });
 }

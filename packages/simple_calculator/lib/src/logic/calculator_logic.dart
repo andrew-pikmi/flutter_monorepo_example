@@ -152,6 +152,12 @@ class CalculatorLogic {
       return;
     }
 
+    final String lastToken = trimmedExpression.split(RegExp(r'\s+')).last;
+    if (CalculatorConstants.operators.contains(lastToken) ||
+        lastToken == CalculatorConstants.minus) {
+      return;
+    }
+
     try {
       final double value = evaluateExpression(trimmedExpression);
       result = _formatNumber(value);
@@ -236,6 +242,11 @@ class CalculatorLogic {
   void _appendOperator(String key) {
     final String trimmed = expression.trimRight();
     if (trimmed.isEmpty) {
+      return;
+    }
+
+    final String currentToken = trimmed.substring(trimmed.lastIndexOf(' ') + 1);
+    if (currentToken == CalculatorConstants.minus) {
       return;
     }
 
