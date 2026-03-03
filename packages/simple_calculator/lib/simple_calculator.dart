@@ -1,7 +1,6 @@
 library simple_calculator;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'src/constants/calculator_constants.dart';
+export 'src/logic/calculator_logic.dart';
+export 'src/screens/calculator_screen.dart';
+export 'src/widgets/calculator_numpad_widget.dart';
