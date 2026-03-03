@@ -47,5 +47,6 @@ jobs:
         run: |
           git config user.name "github-actions" 
           git config user.email "github-actions@github.com"
-          fvm dart run melos version -g --yes
+          fvm dart run melos version -g --yes \
+            --message $'chore(release): graduate packages [skip ci]\n{new_package_versions}'
           git push --follow-tags
