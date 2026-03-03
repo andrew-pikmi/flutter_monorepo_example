@@ -1,0 +1,34 @@
+name: pr
+
+on:
+  pull_request:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: сheckout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: fvm setup
+        run: |
+          curl -fsSL https://fvm.app/install.sh | bash
+          echo "$HOME/fvm/bin" >> $GITHUB_PATH
+
+      - name: dependencies install
+        run: |
+          fvm use
+          fvm flutter pub get
+          fvm dart run melos bs
+
+      - name: format
+        run: fvm dart run melos format
+
+      - name: analyze
+        run: fvm dart run melos analyze
+
+      - name: test
+        run: fvm dart run melos test

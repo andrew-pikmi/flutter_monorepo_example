@@ -1,0 +1,50 @@
+name: release version
+
+on:
+  push:
+    branches:
+      - master
+
+concurrency:
+  group: version-${{ github.workflow }}-${{ github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: сheckout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: fvm setup
+        run: |
+          curl -fsSL https://fvm.app/install.sh | bash
+          echo "$HOME/fvm/bin" >> $GITHUB_PATH
+
+      - name: dependencies install
+        run: |
+          fvm use
+          fvm flutter pub get
+          fvm dart run melos bs
+
+      - name: format
+        run: fvm dart run melos format
+
+      - name: analyze
+        run: fvm dart run melos analyze
+
+      - name: test
+        run: fvm dart run melos test
+
+      - name: version
+        run: |
+          git config user.name "github-actions" 
+          git config user.email "github-actions@github.com"
+          fvm dart run melos version -g --yes
+          git push --follow-tags

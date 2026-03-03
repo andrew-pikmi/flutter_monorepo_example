@@ -1,5 +1,7 @@
 name: flutter_monorepo_example
 
+repository: https://github.com/andrew-pikmi/flutter_monorepo_example
+
 environment:
   sdk: ">=3.11.0 <4.0.0"
 
@@ -12,3 +14,23 @@ workspace:
 
 melos:
   sdkPath: .fvm/flutter_sdk
+
+  scripts:
+    test:
+      description: "run all tests"
+      run: dart run melos exec --concurrency=1 --dir-exists="test" -- "flutter test"
+
+    format:
+      description: "dart code formatting"
+      run: dart run melos exec --concurrency=1 -- "dart format --set-exit-if-changed ."
+
+    analyze:
+      description: "run flutter analyze"
+      run: dart run melos exec --concurrency=1 -- "flutter analyze ."
+
+  command:
+    version:
+      workspaceChangelog: true
+      updateGitTagRefs: true
+      releaseUrl: true
+      linkToCommits: true

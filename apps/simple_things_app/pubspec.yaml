@@ -1,6 +1,5 @@
 name: simple_things_app
 description: "A new Flutter project."
-publish_to: 'none'
 
 version: 1.0.0+1
 
@@ -12,8 +11,8 @@ resolution: workspace
 dependencies:
   flutter:
     sdk: flutter
-  simple_calculator:
-    path: ../../packages/simple_calculator
+  simple_calculator: ^0.0.1
+  ui_kit: ^0.0.1
 
 dev_dependencies:
   flutter_test:
