@@ -1,3 +1,7 @@
+## 0.0.2
+
+ - Graduate package to a stable release. See pre-releases prior to this version for changelog entries.
+
 ## 0.0.2-dev.1
 
  - **FIX**(calculator): handle pending minus token ([#2](https://github.com/andrew-pikmi/flutter_monorepo_example/issues/2)). ([8039cec8](https://github.com/andrew-pikmi/flutter_monorepo_example/commit/8039cec869a004020ab76b4e315caaa0c9843842))

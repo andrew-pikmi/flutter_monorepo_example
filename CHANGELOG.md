@@ -15,6 +15,37 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`simple_calculator` - `v0.0.2`](#simple_calculator---v002)
+ - [`simple_things_app` - `v1.1.0`](#simple_things_app---v110)
+ - [`ui_kit` - `v0.0.2`](#ui_kit---v002)
+
+Packages graduated to a stable release (see pre-releases prior to the stable version for changelog entries):
+
+ - `simple_calculator` - `v0.0.2`
+ - `simple_things_app` - `v1.1.0`
+ - `ui_kit` - `v0.0.2`
+
+---
+
+#### `simple_calculator` - `v0.0.2`
+
+#### `simple_things_app` - `v1.1.0`
+
+#### `ui_kit` - `v0.0.2`
+
+
+## 2026-03-03
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`simple_calculator` - `v0.0.2-dev.1`](#simple_calculator---v002-dev1)
  - [`simple_things_app` - `v1.1.0-dev.1`](#simple_things_app---v110-dev1)
 
