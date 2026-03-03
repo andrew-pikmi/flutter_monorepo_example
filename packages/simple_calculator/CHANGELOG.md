@@ -1,3 +1,11 @@
+## 0.0.2-dev.1
+
+ - **FIX**(calculator): handle pending minus token ([#2](https://github.com/andrew-pikmi/flutter_monorepo_example/issues/2)). ([8039cec8](https://github.com/andrew-pikmi/flutter_monorepo_example/commit/8039cec869a004020ab76b4e315caaa0c9843842))
+
+## 0.0.2-dev.0
+
+ - **FEAT**(calculator): built ui kit, calculator, routing ([#1](https://github.com/andrew-pikmi/flutter_monorepo_example/issues/1)). ([bab74b5d](https://github.com/andrew-pikmi/flutter_monorepo_example/commit/bab74b5da1e2076c606a5116d8f4818bf818ef8c))
+
 ## 0.0.1
 
 * TODO: Describe initial release.

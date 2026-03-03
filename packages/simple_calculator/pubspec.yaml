@@ -1,6 +1,6 @@
 name: simple_calculator
 description: "A new Flutter package project."
-version: 0.0.1
+version: 0.0.2-dev.1
 
 environment:
   sdk: ^3.5.2
@@ -11,7 +11,7 @@ resolution: workspace
 dependencies:
   flutter:
     sdk: flutter
-  ui_kit: ^0.0.1
+  ui_kit: ^0.0.2-dev.0
 
 dev_dependencies:
   flutter_test:

@@ -10,17 +10,18 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  release:
+  verify:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write
+      contents: read
 
     steps:
       - name: сheckout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.PAT || github.token }}
 
       - name: fvm setup
         run: |
@@ -42,9 +43,35 @@ jobs:
       - name: test
         run: fvm dart run melos test
 
+  version:
+    runs-on: ubuntu-latest
+    needs: verify
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: сheckout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.PAT || github.token }}
+
+      - name: fvm setup
+        run: |
+          curl -fsSL https://fvm.app/install.sh | bash
+          echo "$HOME/fvm/bin" >> $GITHUB_PATH
+
+      - name: dependencies install
+        run: |
+          fvm use
+          fvm flutter pub get
+          fvm dart run melos bs
+
       - name: version
         run: |
           git config user.name "github-actions" 
           git config user.email "github-actions@github.com"
-          fvm dart run melos version -p --preid dev --yes
+          fvm dart run melos version -p --preid dev --yes \
+            --message $'chore(release): publish packages [skip ci]\n{new_package_versions}'
           git push --follow-tags
