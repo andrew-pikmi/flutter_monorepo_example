@@ -12,9 +12,15 @@ class Magic8BallLogic {
   String get answer => _answer;
 
   void shake() {
-    _answer = Magic8BallConstants.answers[_random.nextInt(
-      Magic8BallConstants.answers.length,
-    )];
+    final availableAnswers = Magic8BallConstants.answers
+        .where((answer) => answer != _answer)
+        .toList(growable: false);
+
+    if (availableAnswers.isEmpty) {
+      return;
+    }
+
+    _answer = availableAnswers[_random.nextInt(availableAnswers.length)];
   }
 
   void reset() {
