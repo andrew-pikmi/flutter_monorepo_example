@@ -19,12 +19,15 @@ It demonstrates a clean modular architecture with reusable UI components, featur
 ### Architecture Overview
 - `packages/ui_kit`: shared UI primitives and design constants.
 - `packages/simple_calculator`: calculator feature package (screen, input widget, logic).
+- `packages/simple_magic_8_ball`: magic 8 ball feature package.
 - `packages/simple_tap_speed_test`: tap speed mini-game feature package.
 - `apps/simple_things_app`: runnable application that composes feature packages.
 - Dependency direction is one-way:
   - `simple_calculator -> ui_kit`
+  - `simple_magic_8_ball -> ui_kit`
   - `simple_tap_speed_test -> ui_kit`
   - `simple_things_app -> simple_calculator + ui_kit`
+  - `simple_things_app -> simple_magic_8_ball + ui_kit`
   - `simple_things_app -> simple_tap_speed_test + ui_kit`
 
 ### Folder Structure
@@ -40,6 +43,7 @@ It demonstrates a clean modular architecture with reusable UI components, featur
 ├── packages/
 │   ├── ui_kit/
 │   ├── simple_calculator/
+│   ├── simple_magic_8_ball/
 │   └── simple_tap_speed_test/
 ├── CHANGELOG.md
 ├── nx.json
@@ -62,12 +66,15 @@ Current package dependency graph:
 graph TD
   ui_kit["ui_kit"]
   simple_calculator["simple_calculator"]
+  simple_magic_8_ball["simple_magic_8_ball"]
   simple_tap_speed_test["simple_tap_speed_test"]
   simple_things_app["simple_things_app"]
 
   simple_calculator --> ui_kit
+  simple_magic_8_ball --> ui_kit
   simple_tap_speed_test --> ui_kit
   simple_things_app --> simple_calculator
+  simple_things_app --> simple_magic_8_ball
   simple_things_app --> simple_tap_speed_test
   simple_things_app --> ui_kit
 ```
@@ -175,12 +182,15 @@ docs(readme): readme updated
 ### Обзор архитектуры
 - `packages/ui_kit`: общие UI-компоненты и дизайн-константы.
 - `packages/simple_calculator`: feature-пакет калькулятора (экран, клавиатура, логика).
+- `packages/simple_magic_8_ball`: feature-пакет magic 8 ball.
 - `packages/simple_tap_speed_test`: feature-пакет теста скорости нажатий.
 - `apps/simple_things_app`: запускаемое приложение, собирающее фичи.
 - Зависимости направлены в одну сторону:
   - `simple_calculator -> ui_kit`
+  - `simple_magic_8_ball -> ui_kit`
   - `simple_tap_speed_test -> ui_kit`
   - `simple_things_app -> simple_calculator + ui_kit`
+  - `simple_things_app -> simple_magic_8_ball + ui_kit`
   - `simple_things_app -> simple_tap_speed_test + ui_kit`
 
 ### Структура проекта
@@ -196,6 +206,7 @@ docs(readme): readme updated
 ├── packages/
 │   ├── ui_kit/
 │   ├── simple_calculator/
+│   ├── simple_magic_8_ball/
 │   └── simple_tap_speed_test/
 ├── CHANGELOG.md
 ├── nx.json
@@ -218,12 +229,15 @@ fvm dart run melos list --graph
 graph TD
   ui_kit["ui_kit"]
   simple_calculator["simple_calculator"]
+  simple_magic_8_ball["simple_magic_8_ball"]
   simple_tap_speed_test["simple_tap_speed_test"]
   simple_things_app["simple_things_app"]
 
   simple_calculator --> ui_kit
+  simple_magic_8_ball --> ui_kit
   simple_tap_speed_test --> ui_kit
   simple_things_app --> simple_calculator
+  simple_things_app --> simple_magic_8_ball
   simple_things_app --> simple_tap_speed_test
   simple_things_app --> ui_kit
 ```
