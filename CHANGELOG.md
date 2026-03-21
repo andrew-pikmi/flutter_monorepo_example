@@ -15,6 +15,34 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`simple_magic_8_ball` - `v0.0.2-dev.1`](#simple_magic_8_ball---v002-dev1)
+ - [`simple_things_app` - `v1.3.0-dev.1`](#simple_things_app---v130-dev1)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `simple_things_app` - `v1.3.0-dev.1`
+
+---
+
+#### `simple_magic_8_ball` - `v0.0.2-dev.1`
+
+ - **FIX**(magic_8_ball): avoid repeating the same answer ([#9](https://github.com/andrew-pikmi/flutter_monorepo_example/issues/9)). ([26d47e87](https://github.com/andrew-pikmi/flutter_monorepo_example/commit/26d47e8752264d2317ecdbf36bcbc820915edf83))
+
+
+## 2026-03-21
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`simple_magic_8_ball` - `v0.0.2-dev.0`](#simple_magic_8_ball---v002-dev0)
  - [`simple_things_app` - `v1.3.0-dev.0`](#simple_things_app---v130-dev0)
 
