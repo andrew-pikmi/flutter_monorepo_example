@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simple_calculator/simple_calculator.dart';
+import 'package:simple_magic_8_ball/simple_magic_8_ball.dart';
 import 'package:simple_tap_speed_test/simple_tap_speed_test.dart';
 import 'package:ui_kit/ui_kit.dart';
 
@@ -27,6 +28,14 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  void _openMagic8Ball(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (_) => const SimpleMagic8BallScreen(),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,6 +52,11 @@ class _HomeScreenState extends State<HomeScreen> {
             PrimaryButton(
               label: 'Tap Speed Test',
               onPressed: () => _openTapSpeedTest(context),
+            ),
+            const SizedBox(height: AppDimensions.spaceM),
+            PrimaryButton(
+              label: 'Magic 8 Ball',
+              onPressed: () => _openMagic8Ball(context),
             ),
           ],
         ),

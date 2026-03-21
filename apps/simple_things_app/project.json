@@ -4,7 +4,7 @@
   "root": "apps/simple_things_app",
   "sourceRoot": "apps/simple_things_app/lib",
   "projectType": "application",
-  "implicitDependencies": ["simple_calculator", "simple_tap_speed_test", "ui_kit"],
+  "implicitDependencies": ["simple_calculator", "simple_magic_8_ball", "simple_tap_speed_test", "ui_kit"],
   "tags": ["scope:app", "type:flutter"],
   "targets": {
     "format": {
