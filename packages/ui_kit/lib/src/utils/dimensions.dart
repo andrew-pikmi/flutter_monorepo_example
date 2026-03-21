@@ -4,6 +4,8 @@ abstract final class AppDimensions {
   static const double spaceS = 8;
   static const double spaceM = 12;
   static const double spaceL = 16;
+  static const double borderRadiusM = 16;
+  static const double borderRadiusL = 24;
 
   static const EdgeInsets screenPadding = EdgeInsets.all(spaceL);
   static const EdgeInsets primaryButtonPadding = EdgeInsets.symmetric(
