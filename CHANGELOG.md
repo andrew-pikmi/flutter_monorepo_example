@@ -3,6 +3,44 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2026-03-21
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`simple_tap_speed_test` - `v0.0.2-dev.0`](#simple_tap_speed_test---v002-dev0)
+ - [`simple_things_app` - `v1.2.0-dev.0`](#simple_things_app---v120-dev0)
+ - [`ui_kit` - `v0.0.3-dev.0`](#ui_kit---v003-dev0)
+ - [`simple_calculator` - `v0.0.2-dev.0+1`](#simple_calculator---v002-dev01)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `simple_calculator` - `v0.0.2-dev.0+1`
+
+---
+
+#### `simple_tap_speed_test` - `v0.0.2-dev.0`
+
+ - **FEAT**(tap_speed_test): added speed test screen; updated ui_kit ([#6](https://github.com/andrew-pikmi/flutter_monorepo_example/issues/6)). ([26d77cc2](https://github.com/andrew-pikmi/flutter_monorepo_example/commit/26d77cc21582e58d1e0bda81400019fe347e8217))
+
+#### `simple_things_app` - `v1.2.0-dev.0`
+
+ - **FEAT**(tap_speed_test): added speed test screen; updated ui_kit ([#6](https://github.com/andrew-pikmi/flutter_monorepo_example/issues/6)). ([26d77cc2](https://github.com/andrew-pikmi/flutter_monorepo_example/commit/26d77cc21582e58d1e0bda81400019fe347e8217))
+
+#### `ui_kit` - `v0.0.3-dev.0`
+
+ - **FEAT**(tap_speed_test): added speed test screen; updated ui_kit ([#6](https://github.com/andrew-pikmi/flutter_monorepo_example/issues/6)). ([26d77cc2](https://github.com/andrew-pikmi/flutter_monorepo_example/commit/26d77cc21582e58d1e0bda81400019fe347e8217))
+
+
 ## 2026-03-03
 
 ### Changes
