@@ -1,5 +1,7 @@
 .fvm/
 .dart_tool/
 .idea/
+node_modules/
+.nx/
 *.iml
 **/.DS_Store

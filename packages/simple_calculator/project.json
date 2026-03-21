@@ -1,0 +1,32 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "simple_calculator",
+  "root": "packages/simple_calculator",
+  "sourceRoot": "packages/simple_calculator/lib",
+  "projectType": "library",
+  "implicitDependencies": ["ui_kit"],
+  "tags": ["scope:feature", "type:flutter"],
+  "targets": {
+    "format": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/simple_calculator",
+        "command": "fvm dart format --set-exit-if-changed ."
+      }
+    },
+    "analyze": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/simple_calculator",
+        "command": "fvm flutter analyze ."
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/simple_calculator",
+        "command": "bash -lc 'if [ -d test ]; then fvm flutter test; else echo No tests for simple_calculator; fi'"
+      }
+    }
+  }
+}

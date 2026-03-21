@@ -1,0 +1,17 @@
+{
+  "name": "flutter-monorepo-example",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "npm@10.9.0",
+  "scripts": {
+    "nx": "nx",
+    "nx:graph": "nx graph",
+    "nx:affected": "nx affected -t format,analyze,test"
+  },
+  "devDependencies": {
+    "@nx/devkit": "^18.3.5",
+    "@nx/workspace": "^18.3.5",
+    "@nxrocks/nx-flutter": "^9.0.1",
+    "nx": "^18.3.5"
+  }
+}

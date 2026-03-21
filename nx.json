@@ -1,0 +1,32 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "defaultBase": "master",
+  "workspaceLayout": {
+    "appsDir": "apps",
+    "libsDir": "packages"
+  },
+  "plugins": ["@nxrocks/nx-flutter"],
+  "namedInputs": {
+    "sharedGlobals": [
+      "{workspaceRoot}/pubspec.yaml",
+      "{workspaceRoot}/pubspec.lock",
+      "{workspaceRoot}/package.json",
+      "{workspaceRoot}/nx.json"
+    ],
+    "default": ["{projectRoot}/**/*", "sharedGlobals"]
+  },
+  "targetDefaults": {
+    "format": {
+      "cache": true,
+      "inputs": ["default"]
+    },
+    "analyze": {
+      "cache": true,
+      "inputs": ["default"]
+    },
+    "test": {
+      "cache": true,
+      "inputs": ["default"]
+    }
+  }
+}

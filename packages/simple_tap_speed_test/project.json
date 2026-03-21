@@ -1,0 +1,32 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "simple_tap_speed_test",
+  "root": "packages/simple_tap_speed_test",
+  "sourceRoot": "packages/simple_tap_speed_test/lib",
+  "projectType": "library",
+  "implicitDependencies": ["ui_kit"],
+  "tags": ["scope:feature", "type:flutter"],
+  "targets": {
+    "format": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/simple_tap_speed_test",
+        "command": "fvm dart format --set-exit-if-changed ."
+      }
+    },
+    "analyze": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/simple_tap_speed_test",
+        "command": "fvm flutter analyze ."
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/simple_tap_speed_test",
+        "command": "bash -lc 'if [ -d test ]; then fvm flutter test; else echo No tests for simple_tap_speed_test; fi'"
+      }
+    }
+  }
+}

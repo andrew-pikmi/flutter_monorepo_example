@@ -4,14 +4,19 @@ on:
   pull_request:
 
 jobs:
-  release:
+  pr_check:
     runs-on: ubuntu-latest
 
     steps:
-      - name: сheckout
+      - name: checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
       - name: fvm setup
         run: |
@@ -20,32 +25,15 @@ jobs:
 
       - name: dependencies install
         run: |
+          npm ci
           fvm use
           fvm flutter pub get
           fvm dart run melos bs
 
-      - name: resolve diff range
-        id: diff
-        run: echo "value=${{ github.event.pull_request.base.sha }}...HEAD" >> "$GITHUB_OUTPUT"
-
-      - name: format
+      - name: nx affected
         run: |
-          fvm dart run melos exec \
-            --diff "${{ steps.diff.outputs.value }}" \
-            --concurrency=1 \
-            -- "dart format --set-exit-if-changed ."
-
-      - name: analyze
-        run: |
-          fvm dart run melos exec \
-            --diff "${{ steps.diff.outputs.value }}" \
-            --concurrency=1 \
-            -- "flutter analyze ."
-
-      - name: test
-        run: |
-          fvm dart run melos exec \
-            --diff "${{ steps.diff.outputs.value }}" \
-            --concurrency=1 \
-            --dir-exists="test" \
-            -- "flutter test"
+          npx nx affected \
+            -t format,analyze,test \
+            --base="${{ github.event.pull_request.base.sha }}" \
+            --head=HEAD \
+            --outputStyle=static

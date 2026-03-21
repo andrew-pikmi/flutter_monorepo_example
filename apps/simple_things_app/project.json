@@ -1,0 +1,39 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "simple_things_app",
+  "root": "apps/simple_things_app",
+  "sourceRoot": "apps/simple_things_app/lib",
+  "projectType": "application",
+  "implicitDependencies": ["simple_calculator", "simple_tap_speed_test", "ui_kit"],
+  "tags": ["scope:app", "type:flutter"],
+  "targets": {
+    "format": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/simple_things_app",
+        "command": "fvm dart format --set-exit-if-changed ."
+      }
+    },
+    "analyze": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/simple_things_app",
+        "command": "fvm flutter analyze ."
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/simple_things_app",
+        "command": "bash -lc 'if [ -d test ]; then fvm flutter test; else echo No tests for simple_things_app; fi'"
+      }
+    },
+    "run": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/simple_things_app",
+        "command": "fvm flutter run"
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "ui_kit",
+  "root": "packages/ui_kit",
+  "sourceRoot": "packages/ui_kit/lib",
+  "projectType": "library",
+  "tags": ["scope:shared", "type:ui"],
+  "targets": {
+    "format": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/ui_kit",
+        "command": "fvm dart format --set-exit-if-changed ."
+      }
+    },
+    "analyze": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/ui_kit",
+        "command": "fvm flutter analyze ."
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/ui_kit",
+        "command": "bash -lc 'if [ -d test ]; then fvm flutter test; else echo No tests for ui_kit; fi'"
+      }
+    }
+  }
+}

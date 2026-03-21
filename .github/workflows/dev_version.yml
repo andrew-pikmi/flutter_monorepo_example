@@ -17,11 +17,16 @@ jobs:
       contents: read
 
     steps:
-      - name: сheckout
+      - name: checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.PAT || github.token }}
+
+      - name: setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
       - name: fvm setup
         run: |
@@ -30,18 +35,13 @@ jobs:
 
       - name: dependencies install
         run: |
+          npm ci
           fvm use
           fvm flutter pub get
           fvm dart run melos bs
 
-      - name: format
-        run: fvm dart run melos format
-
-      - name: analyze
-        run: fvm dart run melos analyze
-
-      - name: test
-        run: fvm dart run melos test
+      - name: nx run-many
+        run: npx nx run-many -t format,analyze,test --all --outputStyle=static
 
   version:
     runs-on: ubuntu-latest
@@ -51,7 +51,7 @@ jobs:
       contents: write
 
     steps:
-      - name: сheckout
+      - name: checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -62,7 +62,7 @@ jobs:
           curl -fsSL https://fvm.app/install.sh | bash
           echo "$HOME/fvm/bin" >> $GITHUB_PATH
 
-      - name: dependencies install
+      - name: install dependencies
         run: |
           fvm use
           fvm flutter pub get
