@@ -24,11 +24,28 @@ jobs:
           fvm flutter pub get
           fvm dart run melos bs
 
+      - name: resolve diff range
+        id: diff
+        run: echo "value=${{ github.event.pull_request.base.sha }}...HEAD" >> "$GITHUB_OUTPUT"
+
       - name: format
-        run: fvm dart run melos format
+        run: |
+          fvm dart run melos exec \
+            --diff "${{ steps.diff.outputs.value }}" \
+            --concurrency=1 \
+            -- "dart format --set-exit-if-changed ."
 
       - name: analyze
-        run: fvm dart run melos analyze
+        run: |
+          fvm dart run melos exec \
+            --diff "${{ steps.diff.outputs.value }}" \
+            --concurrency=1 \
+            -- "flutter analyze ."
 
       - name: test
-        run: fvm dart run melos test
+        run: |
+          fvm dart run melos exec \
+            --diff "${{ steps.diff.outputs.value }}" \
+            --concurrency=1 \
+            --dir-exists="test" \
+            -- "flutter test"
