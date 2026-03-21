@@ -5,7 +5,12 @@
     "appsDir": "apps",
     "libsDir": "packages"
   },
-  "plugins": ["@nxrocks/nx-flutter"],
+  "plugins": [
+    {
+      "plugin": "@nxrocks/nx-flutter",
+      "include": ["apps/**/pubspec.yaml", "packages/**/pubspec.yaml"]
+    }
+  ],
   "namedInputs": {
     "sharedGlobals": [
       "{workspaceRoot}/pubspec.yaml",
