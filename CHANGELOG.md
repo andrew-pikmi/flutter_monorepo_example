@@ -15,6 +15,32 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`simple_magic_8_ball` - `v0.0.2-dev.0`](#simple_magic_8_ball---v002-dev0)
+ - [`simple_things_app` - `v1.3.0-dev.0`](#simple_things_app---v130-dev0)
+
+---
+
+#### `simple_magic_8_ball` - `v0.0.2-dev.0`
+
+ - **FEAT**(magic_8_ball): added magic 8 ball screen ([#8](https://github.com/andrew-pikmi/flutter_monorepo_example/issues/8)). ([db6f84f5](https://github.com/andrew-pikmi/flutter_monorepo_example/commit/db6f84f50fe165967e07080228809b8116f99b1a))
+
+#### `simple_things_app` - `v1.3.0-dev.0`
+
+ - **FEAT**(magic_8_ball): added magic 8 ball screen ([#8](https://github.com/andrew-pikmi/flutter_monorepo_example/issues/8)). ([db6f84f5](https://github.com/andrew-pikmi/flutter_monorepo_example/commit/db6f84f50fe165967e07080228809b8116f99b1a))
+
+
+## 2026-03-21
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`simple_calculator` - `v0.0.2+1`](#simple_calculator---v0021)
  - [`simple_tap_speed_test` - `v0.0.2`](#simple_tap_speed_test---v002)
  - [`simple_things_app` - `v1.2.0`](#simple_things_app---v120)
