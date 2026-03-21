@@ -15,6 +15,41 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`simple_calculator` - `v0.0.2+1`](#simple_calculator---v0021)
+ - [`simple_tap_speed_test` - `v0.0.2`](#simple_tap_speed_test---v002)
+ - [`simple_things_app` - `v1.2.0`](#simple_things_app---v120)
+ - [`ui_kit` - `v0.0.3`](#ui_kit---v003)
+
+Packages graduated to a stable release (see pre-releases prior to the stable version for changelog entries):
+
+ - `simple_calculator` - `v0.0.2+1`
+ - `simple_tap_speed_test` - `v0.0.2`
+ - `simple_things_app` - `v1.2.0`
+ - `ui_kit` - `v0.0.3`
+
+---
+
+#### `simple_calculator` - `v0.0.2+1`
+
+#### `simple_tap_speed_test` - `v0.0.2`
+
+#### `simple_things_app` - `v1.2.0`
+
+#### `ui_kit` - `v0.0.3`
+
+
+## 2026-03-21
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`simple_tap_speed_test` - `v0.0.2-dev.0`](#simple_tap_speed_test---v002-dev0)
  - [`simple_things_app` - `v1.2.0-dev.0`](#simple_things_app---v120-dev0)
  - [`ui_kit` - `v0.0.3-dev.0`](#ui_kit---v003-dev0)

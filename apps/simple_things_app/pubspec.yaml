@@ -1,7 +1,7 @@
 name: simple_things_app
 description: "A new Flutter project."
 
-version: 1.2.0-dev.0
+version: 1.2.0
 
 environment:
   sdk: ^3.5.2
@@ -11,9 +11,9 @@ resolution: workspace
 dependencies:
   flutter:
     sdk: flutter
-  simple_calculator: ^0.0.2-dev.0+1
-  simple_tap_speed_test: ^0.0.2-dev.0
-  ui_kit: ^0.0.3-dev.0
+  simple_calculator: ^0.0.2+1
+  simple_tap_speed_test: ^0.0.2
+  ui_kit: ^0.0.3
 
 dev_dependencies:
   flutter_test:
